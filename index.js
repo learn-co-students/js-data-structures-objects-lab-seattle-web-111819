@@ -4,14 +4,14 @@
 const driver = {};
 
 // This function SHOULD NOT MUTATE the driver and should return a new driver that has an updated value for the key passed in.
-function updateDriverWithKeyAndValue(driver, key, value) {
+const updateDriverWithKeyAndValue = (driver, key, value) => {
     return Object.assign({}, driver, { [key]: value });
     /* 1) returns a driver with the original key value pairs and the new key value pair
     2) it does not modify the original driver, but rather returns a clone with the new data*/
 }
 
 // This function SHOULD MUTATE the driver and should return a new driver that has an updated value for the key passed in.
-function destructivelyUpdateDriverWithKeyAndValue(driver, key, value) {
+const destructivelyUpdateDriverWithKeyAndValue = (driver, key, value) => {
     driver[key] = value;
     return driver;
     /* updates `driver` with the given `key` and `value` (it is destructive) and returns the entire updated driver */
@@ -19,7 +19,7 @@ function destructivelyUpdateDriverWithKeyAndValue(driver, key, value) {
 
 // This function should take in a driver Object and a key. It should delete the key/value pair for the key that was passed in from the driver Object. This SHOULD NOT MUTATE the driver passed in.
 
-function deleteFromDriverByKey(driver, key) {
+const deleteFromDriverByKey = (driver, key) => {
     const newObj = Object.assign({}, driver);
     delete newObj[key];
     return newObj;
@@ -28,7 +28,7 @@ function deleteFromDriverByKey(driver, key) {
 }
 
 // This function should work the same as deleteFromDriverByKey() but it SHOULD MUTATE the driver passed in. Be sure and consider whether dot-notation or bracket-notation might affect your solution.
-function destructivelyDeleteFromDriverByKey(driver, key) {
+const destructivelyDeleteFromDriverByKey = (driver, key) => {
     delete driver[key];
     return driver;
     /* 1) returns driver without the delete key/value pair
